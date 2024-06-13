@@ -29,13 +29,13 @@ The `translator.py` module translates the labels from the `ontology.json` file i
 
 ### Info Module
 
-The `info.py` module categorizes and analyzes the downloaded sounds based on their labels. It displays the label IDs, their English and Turkish names, and the count of sounds for each label. A subset of 10 labels with 50 audio samples each was selected for training, ensuring a balanced and comprehensive test dataset.
+The `info.py` module categorizes and analyzes the downloaded sounds based on their labels. It displays the label IDs, their English and Turkish names, and the count of sounds for each label.
 
 Note: While `balanced_train_segments.csv` and `ontology.json` are used in the code, you do not need to use the versions included in this repository. They will be automatically downloaded during the dataset preparation process.
 
 ## Model Training
 
-The `test.py` module handles the training of a CNN model using the prepared dataset. Key steps include:
+The `test.py` module handles the training of a CNN model using the prepared dataset. A subset of 10 labels with 50 audio samples each was selected for training, ensuring a balanced and comprehensive test dataset. Key steps include:
 
 - **MFCC Feature Extraction:** Using `librosa`, MFCC features are extracted from the audio files.
 - **Label Encoding:** Labels are encoded into numerical values using `LabelEncoder`.
@@ -62,31 +62,31 @@ The trained model is evaluated using additional YouTube videos. The `test.py` mo
 ## Usage
 
 1. **Clone the Repository:**
-   """
+   ```
    git clone https://github.com/suns-son/AudioSet-MFCC-GMM-Sound-Recognition.git
    cd AudioSet-MFCC-GMM-Sound-Recognition
-   """
+   ```
 
 2. **Install Dependencies:**
-   """
+   ```
    pip install -r requirements.txt
-   """
+   ```
 
 3. **Prepare the Dataset:**
    - Download the dataset from this [Google Drive link](https://drive.google.com/drive/folders/1O3xPaE53pAH5-v_sbHYlxn5YNDoZ2kQq).
    - Place the 18291 audio files into a folder named `dataset` in the same directory as the code files.
 
 4. **Run Dataset Preparation:**
-   """
+   ```
    python downloader.py
    python translator.py
    python info.py
-   """
+   ```
 
 5. **Train the Model:**
-   """
+   ```
    python test.py
-   """
+   ```
 
 ## Results
 
