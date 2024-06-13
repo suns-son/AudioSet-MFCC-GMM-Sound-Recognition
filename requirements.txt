@@ -1,0 +1,10 @@
+requests
+yt-dlp
+ffmpeg
+deep_translator
+tqdm
+numpy
+librosa
+tensorflow
+scikit-learn
+matplotlib
